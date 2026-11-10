@@ -1,0 +1,9 @@
+image: ${MAYHEM_DOCKER_REGISTRY}/${MAYHEM_PROJECT}:${MAYHEM_TARGET}
+project: savantenvs/uftrace
+target: fuzz_info
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_info/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_info
+    libfuzzer: true
